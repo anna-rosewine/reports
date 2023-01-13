@@ -29,6 +29,12 @@ class _ReportsState extends State<Reports> with SingleTickerProviderStateMixin {
         ColorTween(begin: Colors.white, end: Colors.black).animate(_controller);
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
   __mouseEnter() {
     print('enter');
     _controller.forward();
